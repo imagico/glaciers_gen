@@ -25,7 +25,10 @@ Copying CImg.h to the source directory is sufficient.
 Program options
 ---------------
 
-the program offers the following command line options:
+There are two versions of the program - glaciers_gen and glaciers_gen2, the 
+latter is using a digital elevation file to take into account the relief shape.
+
+Both versions have the following command line options:
 
 * `-i` glaciers mask image file (required)
 * `-o` Output image file name for the generalized glaciers mask (required)
@@ -40,7 +43,7 @@ the program offers the following command line options:
 * `-rf` fixed mask buffer radius.  Default: `2.0`
 
 * `-ro` Radius values for opening steps `erode:dilate:dilate:erode`. Default: `2.2:2.2:1.2:1.2`.
-* `-ro` Radius values for closing steps `dilate:erode:erode:dilate`. Default: `2.2:2.2:1.2:1.2`.
+* `-rc` Radius values for closing steps `dilate:erode:erode:dilate`. Default: `2.2:2.2:1.2:1.2`.
 * `-debug` Generate a large number of image files from intermediate steps in the current directory for debugging.  Default: off
 * `-h` show available options
 
@@ -50,6 +53,8 @@ coordinate system information in any file is not transferred to the output.  If 
 
 The program operates purely on the raster image and is unaware of the geographic coordinate system the data is supplied in.  All parameters are specified 
 in pixels as basic units.
+
+glaciers_gen2 has additional parameters related to use of relief data.  Elevation data is expected in the same grid as the source data.
 
 Using the program
 -----------------
@@ -66,5 +71,5 @@ Legal stuff
 
 This program is licensed under the GNU GPL version 3.
 
-Copyright 2013-2014 Christoph Hormann
+Copyright 2013-2016 Christoph Hormann
 
